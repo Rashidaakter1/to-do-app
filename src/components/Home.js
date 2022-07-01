@@ -51,7 +51,7 @@ const Home = () => {
 
 
     return (
-        <div className='h-screen'>
+        <div className='z-0 h-screen'>
             <h1 className=' border-b-4 border-violet-900 text-white text-2xl bg-teal-700 p-6 mb-6 font-semibold'>What's The Task For Today !!! </h1>
             <form onKeyDown={handleKeyDown} onSubmit={handleSubmit(onSubmit)}>
 
