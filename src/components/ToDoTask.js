@@ -29,12 +29,10 @@ const ToDoTask = ({ task, index ,refetch}) => {
     return (
 
         <tr >
-            <td>{index + 1}</td>
-            <td>{newTask}</td>
-            <td>
-                <input  ref={modifiedData} className='border' placeholder='Want to Modify' type="text" name='modify' />
-            </td>
-            <td><button onClick={() => handleEdit(_id)} className='m-2 rounded outline-double px-1 text-lime-900 hover:text-red-300'>Edit</button></td>
+            <td className='border border-slate-700 p-2'>{index + 1}</td>
+            <td className='border border-slate-700 p-2'>{newTask}</td>
+            <td className='border border-slate-700 p-2'>  <input  ref={modifiedData} className='border p-1 capitalize' placeholder='Want to Modify' type="text" name='modify' /> </td>
+            <td className='border border-slate-700 p-2'><button onClick={() => handleEdit(_id)} className='m-2 bg-green-200 rounded hover:bg-green-900 px-2  hover:text-white'>Edit</button></td>
         </tr>
 
     );

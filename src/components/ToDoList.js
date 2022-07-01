@@ -15,18 +15,18 @@ const ToDoList = () => {
     if (isLoading) return 'Loading...'
     console.log(tasks);
     return (
-        <div className='bg-white' >
+        <div className='bg-red-100 h-screen' >
 
-            <h1 className='border bg-teal-600 p-6 mb-6 font-semibold'>To do List </h1>
+            <h1 className=' border-b-4 border-violet-900 text-white text-2xl bg-teal-700 p-6 mb-6 font-semibold'>To do List </h1>
 
-        <div className='ml-12'>
+        <div className='md:ml-12 m-0'>
             
         <table>
                 <tr>
-                    <th>No</th>
-                    <th>Task</th>
-                    <th></th>
-                    <th></th>
+                    <th className='border bg-slate-300 p-2 m-2'>No</th>
+                    <th className='border bg-slate-300 p-2'>Task</th>
+                    <th className='border bg-slate-300 p-2'></th>
+                    <th className='border bg-slate-300 p-2'></th>
                 </tr>
                 {
                     tasks.map((task, index) => <ToDoTask

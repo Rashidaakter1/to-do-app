@@ -2,13 +2,9 @@ import React, { useState } from 'react';
 
 const Task = ({task,refetch}) => {
     const {newTask,_id}=task
-    const [radioOption, setradioOption]= useState(false)
-
-
-   
+    
     const handleChecked=(task)=>{
-    //   console.log(task)
-       
+    
       const data={
         _id:task._id,
         newTask:task.newTask}
@@ -25,7 +21,7 @@ const Task = ({task,refetch}) => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
-                
+                // refetch()
 
             })
 
@@ -35,7 +31,7 @@ const Task = ({task,refetch}) => {
                 console.log('Success:', result)
               })
               
-            refetch()
+            // refetch()
        }
        
        
@@ -44,10 +40,10 @@ const Task = ({task,refetch}) => {
     
     
     return (
-        <div className='m-2' >
+        <div className='m-2 cursor-pointer' >
             
            <input onChange={()=>handleChecked(task)} type="radio" name="clicked" id="" />
-            <h1 className='inline p-2'>this is {newTask}</h1>
+            <h1 className='inline p-2 font-bold md:text-xl cursor-pointer text-indigo-900 hover:text-cyan-900'> {newTask}</h1>
 
         </div>
     );

@@ -35,11 +35,11 @@ const Home = () => {
         )
 
     )
-//    refetch()
+   refetch()
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            // refetch()
+            refetch()
         }
 
 
@@ -51,11 +51,13 @@ const Home = () => {
 
 
     return (
-        <div>
-            <h1 className='border  bg-teal-600 p-6 mb-6 font-semibold'>What's The Task For Today !!! </h1>
+        <div className='h-screen'>
+            <h1 className=' border-b-4 border-violet-900 text-white text-2xl bg-teal-700 p-6 mb-6 font-semibold'>What's The Task For Today !!! </h1>
             <form onKeyDown={handleKeyDown} onSubmit={handleSubmit(onSubmit)}>
 
-                <input className='border p-3' placeholder='Add your Task' {...register("newTask", { required: true })} />
+               <div className=' ml-2 '>
+               <input className='rounded  md:w-1/2 md:m-0 w-3/4 md:p-4 p-2 capitalize' placeholder='Add your Task' {...register("newTask", { required: true })} />
+               </div>
 
             </form>
             <div>
