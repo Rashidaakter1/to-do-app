@@ -11,7 +11,7 @@ const Home = () => {
     const onSubmit = data => {
        
         
-        fetch('http://localhost:5000/tasks', {
+        fetch('https://protected-plains-86102.herokuapp.com/tasks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const Home = () => {
     }
 
     const { isLoading, data:tasks, refetch } = useQuery('tasks', () =>
-        fetch('http://localhost:5000/tasks').then(res =>
+        fetch('https://protected-plains-86102.herokuapp.com/tasks').then(res =>
             res.json()
 
         )

@@ -6,7 +6,7 @@ import ToDoTask from './ToDoTask';
 
 const ToDoList = () => {
     const { isLoading, data: tasks, refetch } = useQuery('tasks', () =>
-        fetch('http://localhost:5000/tasks').then(res =>
+        fetch('https://protected-plains-86102.herokuapp.com/tasks').then(res =>
             res.json()
 
         )

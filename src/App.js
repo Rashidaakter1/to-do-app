@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div  className='bg-red-100
-    w-full h-screen' >
+    w-full ' >
      <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />

@@ -4,7 +4,7 @@ import SingleCompletedTask from './SingleCompletedTask';
 
 const CompletedTask = () => {
     const { isLoading, data: completedTask, refetch } = useQuery('completedTask', () =>
-        fetch('http://localhost:5000/completedTask').then(res =>
+        fetch('https://protected-plains-86102.herokuapp.com/completedTask').then(res =>
             res.json()
 
         )
