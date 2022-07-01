@@ -10,7 +10,7 @@ const Home = () => {
 
     const onSubmit = data => {
        
-
+        
         fetch('http://localhost:5000/tasks', {
             method: 'POST',
             headers: {
@@ -35,11 +35,11 @@ const Home = () => {
         )
 
     )
-  
+//    refetch()
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            refetch()
+            // refetch()
         }
 
 
@@ -63,6 +63,7 @@ const Home = () => {
                     tasks.map(task => <Task
                         task={task}
                         key={task._id}
+                        refetch={refetch}
                        
                     ></Task>)
                 }

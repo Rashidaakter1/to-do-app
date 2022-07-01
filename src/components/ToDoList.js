@@ -33,7 +33,7 @@ const ToDoList = () => {
                         index={index}
                         task={task}
                         key={task._id}
-
+                        refetch={refetch}
                     ></ToDoTask>)
                 }
 

@@ -1,40 +1,52 @@
 import React, { useState } from 'react';
 
-const Task = ({task}) => {
+const Task = ({task,refetch}) => {
     const {newTask,_id}=task
     const [radioOption, setradioOption]= useState(false)
 
 
-    const handle=(id)=>{
-        console.log(id);
-    }
-    const handleChecked=(e)=>{
-
-       setradioOption( e?.target?.checked)
+   
+    const handleChecked=(task)=>{
+    //   console.log(task)
        
-      
-       if(radioOption === true){
-        console.log('ok');
-        // fetch('http://localhost:5000/completedTask', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(data),
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log('Success:', data);
+      const data={
+        _id:task._id,
+        newTask:task.newTask}
+        console.log(data)
+    
+        const uri = `http://localhost:5000/completedTask`
+        fetch(uri, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                
 
-        //     })
+            })
+
+            fetch(`http://localhost:5000/tasks/${task._id}`, {
+                method: 'DELETE',
+              }).then(res=>res.json()).then(result=>{
+                console.log('Success:', result)
+              })
+              
+            refetch()
        }
-       console.log(radioOption );
-    }
+       
+       
+
+       
+    
     
     return (
         <div className='m-2' >
-            <button onClick={()=>handle(_id)}>  <input  onChange={handleChecked} className='' type="checkbox" name="check" id="" /></button>
-          
+            
+           <input onChange={()=>handleChecked(task)} type="radio" name="clicked" id="" />
             <h1 className='inline p-2'>this is {newTask}</h1>
 
         </div>
