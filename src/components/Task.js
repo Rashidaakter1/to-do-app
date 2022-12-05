@@ -10,7 +10,7 @@ const Task = ({task,refetch}) => {
         newTask:task.newTask}
         console.log(data)
     
-        const uri = `https://protected-plains-86102.herokuapp.com/completedTask`
+        const uri = `https://to-do-app-api.onrender.com/completedTask`
         fetch(uri, {
             method: 'POST',
             headers: {
@@ -25,7 +25,7 @@ const Task = ({task,refetch}) => {
 
             })
 
-            fetch(`https://protected-plains-86102.herokuapp.com/tasks/${task._id}`, {
+            fetch(`https://to-do-app-api.onrender.com/tasks/${task._id}`, {
                 method: 'DELETE',
               }).then(res=>res.json()).then(result=>{
                 console.log('Success:', result)

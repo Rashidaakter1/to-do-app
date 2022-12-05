@@ -4,7 +4,7 @@ import SingleCompletedTask from './SingleCompletedTask';
 
 const CompletedTask = () => {
     const { isLoading, data: completedTask, refetch } = useQuery('completedTask', () =>
-        fetch('https://protected-plains-86102.herokuapp.com/completedTask').then(res =>
+        fetch('https://to-do-app-api.onrender.com/completedTask').then(res =>
             res.json()
 
         )

@@ -7,7 +7,7 @@ const ToDoTask = ({ task, index ,refetch}) => {
     const handleEdit = (id) => {
         const modifiedValue = modifiedData.current.value
 
-        const uri = `https://protected-plains-86102.herokuapp.com/tasks/${id}`
+        const uri = `https://to-do-app-api.onrender.com/tasks/${id}`
         console.log(modifiedValue, uri);
         const data = { newTask: modifiedValue }
 
