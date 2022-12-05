@@ -12,7 +12,7 @@ const CompletedTask = () => {
     )
    
     return (
-        <div className='bg-red-100 h-screen'>
+        <div className='bg-red-100 '>
             <h1 className=' border-b-4 border-violet-900 text-white text-2xl bg-teal-700 p-6 mb-6 font-semibold'>Completed Task</h1>
             
 
